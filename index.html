@@ -23,11 +23,29 @@
 
             <!-- slider carousel -->
             <div class="slider-carousel">
-                <div class="arrow">
-                    
+
+                <div class="arrow" @click="prevPhoto">
+                    <i class="fas fa-chevron-left"></i>
                 </div>
+
+                <div class="images">
+                    <img :src="carouselImages[currentActiveImage]" alt="">
+                </div>
+
+                <div class="arrow" @click="nextPhoto">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+
             </div>
             <!-- fine slider carousel -->
+
+            <div class="circles">
+
+                <span v-for="(image, index) in carouselImages" class="circle" :class="{ 'active': index == currentActiveImage }">
+                    <i class="fas fa-circle"></i>
+                </span>   
+                   
+            </div>
 
         </div>
         <!-- FINE SLIDER CONTAINER -->
